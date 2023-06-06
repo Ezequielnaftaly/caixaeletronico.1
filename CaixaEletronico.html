@@ -1,0 +1,237 @@
+<html>
+
+<head>
+
+	<script>
+
+		// Função para solicitar a senha ao usuário
+		function solicitarSenha() {
+			var senha = prompt("Digite sua senha:");
+
+			// Verifica se a senha está correta
+			if (senha === "3589") {
+				// Senha correta, permitir acesso às outras funções
+				alert("Acesso permitido!");
+				// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+			} else {
+				// Senha incorreta, bloquear acesso e solicitar senha novamente
+				alert("Senha incorreta. Por favor, digite a senha novamente.");
+				solicitarSenha();
+			}
+		}
+
+		// Chamando a função para solicitar a senha
+		solicitarSenha();
+
+
+
+		var nome = prompt("Digite o seu nome:");
+		var mensagem = "Olá " + nome + ", é um prazer ter você por aqui!";
+		alert(mensagem);
+
+
+		var saldo = 30000.5; //Float
+		function inicio() {
+
+			var escolha = parseInt(prompt('Selecione uma opção:\n 1. Saldo \n 2. extrato\n 3. saque\n 4. Depósito\n 5. transferencia\n 6. Sair'));
+
+			if (escolha === 1) {
+				ver_saldo();
+			} else if (escolha === 2) {
+				ver_extrato();
+			} else if (escolha === 3) {
+				fazer_saque();
+			} else if (escolha === 4) {
+				fazer_deposito();
+			} else if (escolha === 5) {
+				fazer_transferencia();
+			} else if (escolha === 6) {
+				sair();
+			} else {
+				erro();
+			}
+		}
+
+		function ver_saldo() {
+			// Função para solicitar a senha ao usuário
+			function solicitarSenha() {
+				var senha = prompt("Digite sua senha:");
+
+				// Verifica se a senha está correta
+				if (senha === "3589") {
+					// Senha correta, permitir acesso às outras funções
+					alert("Acesso permitido!");
+					// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+				} else {
+					// Senha incorreta, bloquear acesso e solicitar senha novamente
+					alert("Senha incorreta. Por favor, digite a senha novamente.");
+					solicitarSenha();
+				}
+			}
+
+			// Chamando a função para solicitar a senha
+			solicitarSenha();
+			alert('Seu saldo atual é: ' + saldo);
+			inicio();
+
+		}
+
+		function ver_extrato() {
+			// Função para solicitar a senha ao usuário
+			function solicitarSenha() {
+				var senha = prompt("Digite sua senha:");
+
+				// Verifica se a senha está correta
+				if (senha === "3589") {
+					// Senha correta, permitir acesso às outras funções
+					alert("Acesso permitido!");
+					// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+				} else {
+					// Senha incorreta, bloquear acesso e solicitar senha novamente
+					alert("Senha incorreta. Por favor, digite a senha novamente.");
+					solicitarSenha();
+				}
+			}
+
+			// Chamando a função para solicitar a senha
+			solicitarSenha();
+			alert("EXTRATO \n \n Agencia: 1020.3 \n Conta: 123456-78 \n  \n 15-06 Depósito R$ 50.000,50 - SBT \n 15-06 Pagamento R$ 20.000,00 - Ratinho \n 16-06 Depósito R$ 45.000,00 - GLOBO \n 16-06 Pagamento R$15.000,00 - Luciano Ruck \n 17-06 Depósito R$ 8.000,00 - REDETV \n 17-06 Pagamento R$ 3.000,00 - João Kleber \n 19-06 Depósito R$ 20.000,00 - Ministerio da CULTURA \n 19-06 Pagamento R$5.000,00 - TVCULTURA ");
+			inicio();
+		}
+		function fazer_deposito() {
+			// Função para solicitar a senha ao usuário
+			function solicitarSenha() {
+				var senha = prompt("Digite sua senha:");
+
+				// Verifica se a senha está correta
+				if (senha === "3589") {
+					// Senha correta, permitir acesso às outras funções
+					alert("Acesso permitido!");
+					// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+				} else {
+					// Senha incorreta, bloquear acesso e solicitar senha novamente
+					alert("Senha incorreta. Por favor, digite a senha novamente.");
+					solicitarSenha();
+				}
+			}
+
+			// Chamando a função para solicitar a senha
+			solicitarSenha();
+			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+			// Not a Number
+			if (isNaN(deposito) || deposito === '') {
+				alert('Por favor, informe um número:');
+				fazer_deposito();
+			} else {
+				saldo += deposito;
+				ver_saldo();
+			}
+		}
+
+		function fazer_saque() {
+			// Função para solicitar a senha ao usuário
+			function solicitarSenha() {
+				var senha = prompt("Digite sua senha:");
+
+				// Verifica se a senha está correta
+				if (senha === "3589") {
+					// Senha correta, permitir acesso às outras funções
+					alert("Acesso permitido!");
+					// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+				} else {
+					// Senha incorreta, bloquear acesso e solicitar senha novamente
+					alert("Senha incorreta. Por favor, digite a senha novamente.");
+					solicitarSenha();
+				}
+			}
+
+			// Chamando a função para solicitar a senha
+			solicitarSenha();
+
+			var saque = parseFloat(prompt('Qual o valor para saque?'));
+			if (isNaN(saque) || saque === '') {
+				alert('Por favor, informe um número válido.');
+				fazer_saque();
+			} else if (saque > saldo) {
+				alert('Saldo insuficiente.\nOperação nao Realizada.\nPor favor, informe um valor menor.\n');
+				fazer_saque();
+			} else {
+				saldo -= saque;
+				function realizarSaque(valor) {
+					if (valor <= 0) {
+						alert("Operação não autorizada.");
+					} else {
+						// Código para realizar o saque aqui
+					}
+				}
+
+				// Exemplo de uso da função
+				realizarSaque(100); // Saque realizado com sucesso!
+				realizarSaque(0); // Operação não autorizada.
+				realizarSaque(-50); // Operação não autorizada.	
+				ver_saldo();
+
+			}
+		}
+		function fazer_transferencia() {
+			// Função para solicitar a senha ao usuário
+			function solicitarSenha() {
+				var senha = prompt("Digite sua senha:");
+
+				// Verifica se a senha está correta
+				if (senha === "3589") {
+					// Senha correta, permitir acesso às outras funções
+					alert("Acesso permitido!");
+					// Aqui você pode chamar as funções relacionadas ao saldo, saque, extrato ou transferência de dinheiro
+				} else {
+					// Senha incorreta, bloquear acesso e solicitar senha novamente
+					alert("Senha incorreta. Por favor, digite a senha novamente.");
+					solicitarSenha();
+					inicio();
+				}
+			}
+
+			// Chamando a função para solicitar a senha
+			solicitarSenha();
+			var contaDestino = prompt("Informe o número da conta de destino:");
+			var valorTransferencia = parseFloat(prompt("Informe o valor da transferência:"));
+
+			// Verificando se o valor da transferência é válido
+			if (isNaN(valorTransferencia) || valorTransferencia <= 0) {
+				alert("Operação não realizada.\nValor de transferência inválido!");
+				return;
+			}
+
+			// Verificando se o saldo é suficiente para a transferência
+			if (saldo >= valorTransferencia) {
+				saldo -= valorTransferencia;
+				alert("Transferência realizada com sucesso!");
+			} else {
+				alert("Operação não autorizada. Saldo insuficiente!");
+				inicio();
+			}
+		}
+		inicio();
+		function erro() {
+			alert('Por favor, informe um número entre 1 e 6, meu amigo.!');
+			inicio();
+		}
+
+		function sair() {
+			var confirma = confirm('Você deseja sair?');
+			if (confirma) {
+				var mensagemAgradecimento = nome + ", foi um prazer ter você por aqui!";
+				alert(mensagemAgradecimento);
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+</script>
+</head>
+
+<body onload="exibirMensagem()">
+
+</body>
+
+</html>
